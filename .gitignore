@@ -1,0 +1,7 @@
+# Compiler artifacts
+git-study
+*.o
+
+# Machine-specific caches
+.cache/
+compile_commands.json
