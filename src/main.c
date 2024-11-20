@@ -1,6 +1,7 @@
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void usage(char *argv0) { printf("Usage: %s [-a arg] [-b arg] [-c arg]\n", argv0); }
 
@@ -27,8 +28,12 @@ int main(int argc, char *argv[])
         }
     }
 
-    for (int i = optind; i < argc; ++i) {
-        printf("positional argument: %s\n", argv[i]);
+    if (strcmp(argv[optind], "hello") == 0) {
+        printf("Hello, world!\n");
+    } else {
+        printf("Say hello first!\n");
+        exit(1);
     }
+
     return 0;
 }
